@@ -65,7 +65,8 @@ extension ChatComponent: Registration {
 extension ChatCoordinatorComponent: Registration {
     public func registerItems() {
 
-
+        localTable["chatService-IChatService"] = { [unowned self] in self.chatService as Any }
+        localTable["logger-ILogger"] = { [unowned self] in self.logger as Any }
     }
 }
 
@@ -83,7 +84,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 
 #if !NEEDLE_DYNAMIC
 
-private func register1() {
+@inline(never) private func register1() {
     registerProviderFactory("^->ChatCoordinatorComponent->ChatListComponent", factoryabd00caea3eae6c54a751569e3ab5496b68a7133)
     registerProviderFactory("^->ChatCoordinatorComponent->ChatComponent", factory9523f099c5b34b02734d1569e3ab5496b68a7133)
     registerProviderFactory("^->ChatCoordinatorComponent", factoryEmptyDependencyProvider)

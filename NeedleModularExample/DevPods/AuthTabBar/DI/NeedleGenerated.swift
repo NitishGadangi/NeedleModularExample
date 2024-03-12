@@ -38,7 +38,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 
 #if !NEEDLE_DYNAMIC
 
-private func register1() {
+@inline(never) private func register1() {
     registerProviderFactory("^->AuthTabBarCoordinatorComponent", factoryEmptyDependencyProvider)
 }
 #endif
