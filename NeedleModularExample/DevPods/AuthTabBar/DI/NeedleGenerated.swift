@@ -1,6 +1,7 @@
 
 
 import ChatInterfaces
+import Core
 import NeedleFoundation
 
 // swiftlint:disable unused_declaration

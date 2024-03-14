@@ -7,7 +7,7 @@ import Core
 final class ApplicationComponent: BootstrapComponent {
     var rootViewController: UIViewController {
         shared {
-            ViewController(authTabBarCoordinatorAssembly: authTabBarCoordinatorAssembly)
+            ViewController(authTabBarCoordinatorAssembly: authTabBarCoordinatorAssembly, logger: logger)
         }
     }
 

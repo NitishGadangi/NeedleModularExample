@@ -16,6 +16,6 @@ class AuthTabBarCoordinator: BaseCoordinator, IAuthTabBarCoordinator {
     
     func setup() {
         let chatCoordinator = chatCoordinatorAssembly.assemble()
-        print(chatCoordinator)
+        print(type(of: self))
     }
 }

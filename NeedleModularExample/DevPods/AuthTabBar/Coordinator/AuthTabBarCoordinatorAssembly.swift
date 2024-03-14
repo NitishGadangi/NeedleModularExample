@@ -19,6 +19,9 @@ public class AuthTabBarCoordinatorAssembly: IAuthTabBarCoordinatorAssembly {
     
     public func assemble() -> IAuthTabBarCoordinator {
         let component = componentProvider()
+        withUnsafePointer(to: component.logger) { address in
+            print("\(type(of: self)) - \(address)")
+        }
         let coordinator = AuthTabBarCoordinator(
             scope: component,
             chatCoordinatorAssembly: component.chatCoordinatorAssembly

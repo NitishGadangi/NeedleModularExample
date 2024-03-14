@@ -1,12 +1,15 @@
 import NeedleFoundation
+import Core
 import ChatInterfaces
 
 public protocol AuthTabBarCoordinatorDependency {
     var chatCoordinatorAssembly: IChatCoordinatorAssembly { get }
+    var logger: ILogger { get }
 }
 
 protocol IAuthTabBarCoordinatorComponent {
     var chatCoordinatorAssembly: IChatCoordinatorAssembly { get }
+    var logger: ILogger { get }
 }
 
 public class AuthTabBarCoordinatorComponent: BootstrapComponent, IAuthTabBarCoordinatorComponent {
@@ -18,4 +21,6 @@ public class AuthTabBarCoordinatorComponent: BootstrapComponent, IAuthTabBarCoor
     }
     
     var chatCoordinatorAssembly: IChatCoordinatorAssembly { dependencies.chatCoordinatorAssembly }
+
+    var logger: ILogger { dependencies.logger }
 }
