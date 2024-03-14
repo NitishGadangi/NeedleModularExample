@@ -4,7 +4,13 @@ import ChatInterfaces
 import AuthTabBar
 import Core
 
-class ApplicationComponent: BootstrapComponent {
+final class ApplicationComponent: BootstrapComponent {
+    var rootViewController: UIViewController {
+        shared {
+            ViewController(authTabBarCoordinatorAssembly: authTabBarCoordinatorAssembly)
+        }
+    }
+
     var authTabBarCoordinatorAssembly: IAuthTabBarCoordinatorAssembly {
         AuthTabBarCoordinatorAssembly {
             AuthTabBarCoordinatorComponent(dependencies: self)

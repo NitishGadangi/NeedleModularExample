@@ -2,7 +2,9 @@ import Foundation
 import ChatInterfaces
 import Core
 
-public protocol IAuthTabBarCoordinator {}
+public protocol IAuthTabBarCoordinator {
+    func setup()
+}
 
 class AuthTabBarCoordinator: BaseCoordinator, IAuthTabBarCoordinator {
     private let chatCoordinatorAssembly: IChatCoordinatorAssembly

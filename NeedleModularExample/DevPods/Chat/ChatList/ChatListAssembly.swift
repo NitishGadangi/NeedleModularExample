@@ -14,6 +14,7 @@ class ChatListAssembly: IChatListAssembly {
     
     func assemble() -> UIViewController {
         let component = componentProvider()
+        print("ChatListAssembly \(component.logger)")
         let presenter = ChatListPresenter(scope: component, logger: component.logger, chatService: component.chatService)
         let viewController = ChatListViewController(presenter: presenter)
         return viewController

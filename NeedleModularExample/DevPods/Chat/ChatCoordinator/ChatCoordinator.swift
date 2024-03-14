@@ -9,6 +9,8 @@ class ChatCoordinator: BaseCoordinator, IChatCoordinator {
     init(scope: Any, chatListAssembly: IChatListAssembly, chatAssembly: IChatAssembly) {
         self.chatListAssembly = chatListAssembly
         self.chatAssembly = chatAssembly
+        chatAssembly.assemble()
+        chatListAssembly.assemble()
         super.init(scope: scope)
     }
 }

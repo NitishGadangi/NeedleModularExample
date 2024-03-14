@@ -5,6 +5,7 @@ class ApplicationCoordinatorAssembly {
     
     func assemble() -> IApplicationCoordinator {
         let component = ApplicationComponent()
+        print("ApplicationCoordinatorAssembly \(component.logger)")
         return ApplicationCoordinator(
             scope: component,
             authTabBarCoordinatorAssembly: component.authTabBarCoordinatorAssembly
